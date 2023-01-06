@@ -8,10 +8,13 @@ from setuptools import Command
 import shlex
 import subprocess
 import os
+import configparser
 
-#TODO MODIFY ME! (Ideally auto-aligns with the info in `setup.py`)
-PKG_NM_N_VERSION = "utils_slack-1.0" # The package name and version; Used for writing the tar.gz files etc. only
-
+setup_cfg = configparser.ConfigParser()
+setup_cfg.read("setup.cfg")
+package_name = setup_cfg['default']['package_name']
+version = setup_cfg['default']['version']
+PKG_NM_N_VERSION = f"{package_name}-{version}" # The package name and version; Used for writing the tar.gz files etc. only
 WHEELHOUSE = "wheelhouse" # Wheel building directory
 
 

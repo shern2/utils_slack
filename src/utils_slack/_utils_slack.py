@@ -7,6 +7,8 @@ from pathlib import Path
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 
+__all__ = ['MySlackApp']
+
 class MySlackApp:
     '''Slack app
     (Need to setup the Slack App, bot, bot token, register the bot scope, install the app in Slack workspace, install app in the channel, etc.)
